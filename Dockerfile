@@ -11,7 +11,7 @@ RUN gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 RUN apt-get update && apt install -y tor deb.torproject.org-keyring
 
 # Create an unprivileged tor user
-RUN addgroup -g 19001 -S $TOR_USER && adduser -u 19001 -G $TOR_USER -S $TOR_USER
+RUN addgroup -g 19001 -S tord && adduser -u 19001 -G tord -S tord
 
 # Copy Tor configuration file
 COPY ./torrc /etc/tor/torrc
