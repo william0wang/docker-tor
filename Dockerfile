@@ -8,7 +8,7 @@ echo "deb-src https://deb.torproject.org/torproject.org stretch main" >> /etc/ap
 RUN curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
 RUN gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 
-RUN apt-get update && apt install tor deb.torproject.org-keyring
+RUN apt-get update && apt install -y tor deb.torproject.org-keyring
 
 # Create an unprivileged tor user
 RUN addgroup -g 19001 -S $TOR_USER && adduser -u 19001 -G $TOR_USER -S $TOR_USER
