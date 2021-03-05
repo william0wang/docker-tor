@@ -19,5 +19,4 @@ VOLUME /var/lib/tor
 # SocksPort
 EXPOSE 9100
 
-ENTRYPOINT ["docker-entrypoint"]
 CMD ["tor", "-f", "/etc/tor/torrc"]
