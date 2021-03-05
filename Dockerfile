@@ -1,5 +1,8 @@
 FROM debian:stretch-slim
 
+RUN apt-get update \
+&& apt-get install -y --no-install-recommends ca-certificates gpg curl
+
 RUN echo "deb https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources.list && \
 echo "deb-src https://deb.torproject.org/torproject.org stretch main" >> /etc/apt/sources.list
 
